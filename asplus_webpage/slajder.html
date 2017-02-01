@@ -1,0 +1,75 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+#slider {
+	width:820px;
+	height:420px;
+	overflow:hidden;
+	}
+	
+#slider .slides {
+	display:block;
+	width:6000px;
+	height:320px;
+	margin:0px;
+	padding:0px;
+	}
+#slider .slide {
+	float:left;
+	list-style-type:none;
+	width:820px;
+	height:420px;}	
+
+
+</style>
+
+<script>
+$(document).ready(function(){
+
+	var trenutni = 1;
+	
+	
+
+	setInterval (function(){
+		$(" #slider .slides ").animate({'margin-left':'-=820'}, 2000, function(){
+		trenutni++;
+		if(trenutni === 4){
+			trenutni=1;
+			$(' #slider .slides ').css('margin-left', 0);
+		}
+		});
+	},3000);
+
+
+
+
+
+});
+</script>
+
+
+</head>
+<body>
+
+<div id="slider">
+	<ul class="slides">
+		<li class="slide"><img src="slike/1.jpg"></li>
+		<li class="slide"><img src="slike/2.jpg"></li>
+		<li class="slide"><img src="slike/3.jpg"></li>
+		<li class="slide"><img src="slike/1.jpg"></li>
+		
+	</ul>
+</div>
+
+
+</body>
+</html>
